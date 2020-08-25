@@ -36,7 +36,7 @@ body {
   clip-path: circle(300px at 80% -20%);
 }
 .container .card::after {
-  content: "Nike";
+  content: "SDTT";
   position: absolute;
   top: 30%;
   left: -20%;
