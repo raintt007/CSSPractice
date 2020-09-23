@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    display: grid;
+    background-color: #6665ee;
+    height: 100%;
+    place-items: center;
+}
+.skills-bar {
+    width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+}
+.skills-bar .bar {
+    margin: 20px 0;
+}
+.skills-bar .bar:first-child {
+    margin-top: 0;
+}
+.skills-bar .bar .info {
+    margin-bottom: 5px;
+}
+.skills-bar .bar .info span {
+    font-size: 17px;
+    font-weight: 500;
+    opacity: 0;
+    animation: showText .5s 1s linear forwards;
+}
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+.skills-bar .bar .progress-line {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .5),
+                      0px 1px rgba(255, 255, 255, .8);
+    animation: animate 1s cubic-bezier(1, 0, .5, 1) forwards;
+}
+
+.bar .progress-line span {
+    height: 100%;
+    width: 80%;
+    background-color: #6665ee;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, .5),
+                      0px 1px rgba(255, 255, 255, .8);
+    animation: animate 1s 1s cubic-bezier(1, 0, .5, 1) forwards;
+}
+@keyframes animate {
+    100% {
+        transform: scale(1);
+    }
+}
+.bar .progress-line span::before {
+    position: absolute;
+    content: " ";
+    height: 0;
+    width: 0;
+    right: 0;
+    top: -10px;
+    border: 7px solid transparent;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-top-color: #000;
+    opacity: 0;
+    animation: showText2 .5s 1.5s linear forwards;
+}
+.bar .progress-line span::after{
+    position: absolute;
+    content: "80%";
+    right: 0;
+    top: -28px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 1px 8px;
+    border-radius: 3px;
+    background-color: #000;
+    opacity: 0;
+    animation: showText2 .5s 1.5s linear forwards;
+}
+@keyframes showText2 {
+    100% {
+        opacity: 1;
+    }
+}
+.bar .progress-line.html span::after {
+    content: "99%";
+}
+.bar .progress-line.css span::after {
+    content: "20%";
+}
+.bar .progress-line.vue span::after {
+    content: "30%";
+}
+.bar .progress-line.canvas span::after {
+    content: "40%";
+}
+
+.bar .progress-line.html span {
+    width: 99%;
+}
+.bar .progress-line.css span {
+    width: 20%;
+}
+.bar .progress-line.vue span {
+    width: 30%;
+}
+.bar .progress-line.canvas span {
+    width: 40%;
+}
